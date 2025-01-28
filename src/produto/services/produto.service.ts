@@ -15,7 +15,7 @@ export class ProdutoService {
   ) {}
 
   async findAll(): Promise<Produto[]> {
-    // Garantir que a relação com categoria seja carregada
+   
     return this.produtoRepository.find({ relations: ['categoria'] });
   }
 
@@ -33,7 +33,7 @@ export class ProdutoService {
       throw new NotFoundException('Categoria não encontrada');
     }
 
-    // Criação do novo produto
+    
     const produto = this.produtoRepository.create({
       nome: produtoData.nome,
       preco: produtoData.preco,
@@ -52,7 +52,7 @@ export class ProdutoService {
       throw new NotFoundException('Categoria não encontrada');
     }
 
-    // Atualizando as propriedades do produto
+    
     Object.assign(produto, produtoData);
     produto.categoria = categoria;
 

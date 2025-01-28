@@ -16,5 +16,5 @@ export class Produto {
   quantidade: number;
 
   @ManyToOne(() => Categoria, (categoria) => categoria.produtos, { eager: true })
-  categoria: Categoria; // Relacionamento com Categoria
+  categoria: Categoria; 
 }
